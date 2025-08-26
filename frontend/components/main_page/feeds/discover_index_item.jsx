@@ -133,7 +133,14 @@ class SubscribeButton extends React.Component {
       selectedCollectionIds: []
     });
     try {
-      const res = await fetch('/api/collections');
+      // Get CSRF token from meta tag
+      const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
+      const res = await fetch('/api/collections', {
+        method: 'GET',
+        headers: {
+          'X-CSRF-Token': csrfToken || ''
+        }
+      });
       if (!res.ok) throw new Error('Failed to fetch collections');
       const collections = await res.json();
       this.safeSetState({ collections, loading: false });
@@ -182,9 +189,14 @@ class SubscribeButton extends React.Component {
     }
     this.safeSetState({ creatingCollection: true, createError: '' });
     try {
+      // Get CSRF token from meta tag
+      const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
       const res = await fetch('/api/collections', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': csrfToken || ''
+        },
         body: JSON.stringify({ name: newCollectionName })
       });
       if (!res.ok) throw new Error('Failed to create collection');

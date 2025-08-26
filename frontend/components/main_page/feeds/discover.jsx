@@ -10,11 +10,14 @@ class Discover extends React.Component {
   // Handle follow social profile button click
   handleFollowSocialProfile = async (profile) => {
     try {
+      // Get CSRF token from meta tag
+      const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
       const response = await fetch('/api/social_media_markeds', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Accept': 'application/json',
+          'X-CSRF-Token': csrfToken || ''
         },
         body: JSON.stringify({
           platform: profile.platform,
@@ -27,7 +30,12 @@ class Discover extends React.Component {
       if (!response.ok) throw new Error('Failed to follow profile');
       const marked = await response.json();
       // Fetch collections and open dialog to assign this social profile
-      const collectionsRes = await fetch('/api/collections');
+      const collectionsRes = await fetch('/api/collections', {
+        method: 'GET',
+        headers: {
+          'X-CSRF-Token': csrfToken || ''
+        }
+      });
       const collections = await collectionsRes.json();
       this.setState({
         showSocialDialog: true,

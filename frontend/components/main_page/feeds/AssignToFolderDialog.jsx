@@ -26,11 +26,14 @@ export default function AssignToFolderDialog({ open, collections, selectedCollec
     setCreating(true);
     setCreateError(null);
     try {
+      // Get CSRF token from meta tag
+      const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
       const res = await fetch('/api/collections', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Accept': 'application/json',
+          'X-CSRF-Token': csrfToken || ''
         },
         body: JSON.stringify({ name: newFolderName.trim() })
       });
