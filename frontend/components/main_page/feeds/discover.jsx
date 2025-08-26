@@ -266,39 +266,48 @@ handleQueryChange = async e => {
           {socialError && <div style={{ color: '#d32f2f', fontSize: 14, margin: '12px 0' }}>{socialError}</div>}
           {socialProfile && (
             <div style={{ display: 'flex', alignItems: 'center', gap: 18, margin: '12px 0', background: '#f8f9fa', borderRadius: 8, padding: 14 }}>
-              <img
-                src={socialProfile.avatar}
-                alt="avatar"
-                style={{ width: 56, height: 56, borderRadius: '50%', border: '2px solid #eee', background: '#fff', objectFit: 'cover' }}
-                onError={e => {
-                  e.persist && e.persist();
-                  if (socialProfile.avatarFallback && !e.target._triedFallback) {
-                    e.target._triedFallback = true;
-                    e.target.src = socialProfile.avatarFallback;
-                  } else if (socialProfile.platform === 'Facebook' && !e.target._triedDirect) {
-                    e.target._triedDirect = true;
-                    const fbUrl = `https://graph.facebook.com/${socialProfile.username}/picture?type=large`;
-                    e.target.src = fbUrl;
-                  } else if (socialProfile.platform === 'Instagram' && !e.target._triedDirect) {
-                    e.target._triedDirect = true;
-                    const unavatarProxy = `https://unavatar.io/instagram/${socialProfile.username}`;
-                    const testImg = new window.Image();
-                    testImg.onload = function() { if (e.target) e.target.src = unavatarProxy; };
-                    testImg.onerror = function() {
+              <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+                <img
+                  src={socialProfile.platform === 'Instagram' ? `https://unavatar.io/instagram/${socialProfile.username}` : socialProfile.avatar}
+                  alt="avatar"
+                  style={{ width: 56, height: 56, borderRadius: '50%', border: '2px solid #eee', background: '#fff', objectFit: 'cover' }}
+                  onError={e => {
+                    if (socialProfile.platform === 'Instagram' && !e.target._triedDirect) {
+                      e.target._triedDirect = true;
+                      e.target.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(socialProfile.username || 'User') + '&background=eee&color=555&size=56';
+                    } else if (socialProfile.platform === 'Facebook' && !e.target._triedDirect) {
+                      e.target._triedDirect = true;
+                      const fbUrl = `https://graph.facebook.com/${socialProfile.username}/picture?type=large`;
+                      e.target.src = fbUrl;
+                    } else {
                       if (e.target) {
                         e.target.onerror = null;
                         e.target.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(socialProfile.username || 'User') + '&background=eee&color=555&size=56';
                       }
-                    };
-                    testImg.src = unavatarProxy;
-                  } else {
-                    if (e.target) {
-                      e.target.onerror = null;
-                      e.target.src = 'https://ui-avatars.com/api/?name=' + encodeURIComponent(socialProfile.username || 'User') + '&background=eee&color=555&size=56';
                     }
-                  }
-                }}
-              />
+                  }}
+                />
+                {(socialProfile.platform === 'Instagram' || (socialProfile.url && socialProfile.url.includes('instagram.com'))) && (
+                  <span style={{ position: 'absolute', bottom: 2, right: 2, background: '#fff', borderRadius: '50%', padding: 2 }}>
+                    <i className="fa fa-instagram" style={{ color: '#E1306C', fontSize: 20 }} aria-hidden="true"></i>
+                  </span>
+                )}
+                {socialProfile.platform === 'Facebook' && (
+                  <span style={{ position: 'absolute', bottom: 2, right: 2, background: '#fff', borderRadius: '50%', padding: 2 }}>
+                    <i className="fa fa-facebook" style={{ color: '#4267B2', fontSize: 20 }} aria-hidden="true"></i>
+                  </span>
+                )}
+                {(socialProfile.platform === 'X' || socialProfile.platform === 'Twitter') && (
+                  <span style={{ position: 'absolute', bottom: 2, right: 2, background: '#fff', borderRadius: '50%', padding: 2 }}>
+                    <i className="fa fa-twitter" style={{ color: '#1DA1F2', fontSize: 20 }} aria-hidden="true"></i>
+                  </span>
+                )}
+                {socialProfile.platform === 'YouTube' && (
+                  <span style={{ position: 'absolute', bottom: 2, right: 2, background: '#fff', borderRadius: '50%', padding: 2 }}>
+                    <i className="fa fa-youtube" style={{ color: '#FF0000', fontSize: 20 }} aria-hidden="true"></i>
+                  </span>
+                )}
+              </div>
               <div>
                 <div style={{ fontWeight: 600, fontSize: 18 }}>{socialProfile.platform}</div>
                 <div style={{ color: '#333', fontSize: 16, margin: '2px 0' }}>@{socialProfile.username}</div>

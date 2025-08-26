@@ -28,7 +28,7 @@ Rails.application.routes.draw do
       end
     end
     resources :reads, only: [:create, :destroy, :index]
-    get 'instagram_avatar/:username', to: 'instagram_avatar#show'
+  get 'instagram_avatar/:username', to: 'api/instagram_avatar#show'
     get 'instagram_posts', to: 'instagram_posts#show'           # supports query param
     get 'instagram_posts/:username', to: 'instagram_posts#show' # supports URL param
     resources :social_media_markeds, only: [:index, :create]
