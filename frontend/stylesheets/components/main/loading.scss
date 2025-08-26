@@ -1,0 +1,17 @@
+.main-page {
+  position: relative;
+}
+
+.main-loading-messages {
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  transform: translate(-50%);
+  right: auto;
+  background: rgba(43, 177, 76, 0.5);
+  background-blend-mode: lighten;
+  padding: 20px;
+  color: white;
+  z-index: 1000;
+}

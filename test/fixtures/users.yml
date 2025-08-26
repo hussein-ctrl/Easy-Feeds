@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+johnsmith:
+  email: johnsmith@email.com
+  first_name: John
+  last_name: Smith
+  password_digest: abcd123efgh456
+  session_token: a1234567890xyz
+
+janedoe:
+  email: janedoe@email.com
+  first_name: Jane
+  last_name: Doe
+  password_digest: abcd123efgh456
+  session_token: b1234567890xyzx

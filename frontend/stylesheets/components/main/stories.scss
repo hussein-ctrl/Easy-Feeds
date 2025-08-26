@@ -1,0 +1,114 @@
+.story-index {
+  width: 100%;
+  max-width: 620px;
+}
+
+.story-index h2 {
+  font-size: 24px;
+  font-weight: bolder;
+  padding-bottom: 40px;
+}
+
+.story-index-item {
+  font-size: 16px;
+  display: flex;
+  min-height: 100px;
+  width: 100%;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+
+.story-index-item:hover {
+  cursor: pointer;
+}
+
+.story-index-details a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+.story-details {
+  margin-left: 20px;
+  width: 100%;
+}
+
+// title
+.story-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.story-title h4 {
+  font-size: 15px;
+  font-weight: bold;
+  padding-bottom: 12px;
+  line-height: 18px;
+}
+
+.story-index-item h5 {
+  font-size: 12px;
+  padding-bottom: 12px;
+  color: grey;
+}
+
+.story-index-item a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.story-item-image {
+  background-size: cover;
+  display: block;
+  flex: none;
+  height: 85px;
+  width: 135px;
+  overflow: hidden;
+  border-radius: 3px;
+  border: 1px solid lightgrey;
+}
+
+.story-index-item p {
+  font-size: 12px;
+  color: grey;
+  font-family: 'Noto Serif', serif;
+}
+
+.read-controls {
+  min-width: 50px;
+  margin-left: 10px;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+.hide-story, .read-story {
+  display: inline-block;
+  height: 1em;
+  color: $text-light-grey;
+  padding: 5px;
+  padding-top: 0;
+}
+
+.hide-story:hover, .read-story:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.read {
+  opacity: .5;
+}
+
+//condensedView
+
+.story-index-item.condensed {
+  flex-direction: column;
+}
+
+.condensed .story-item-image {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.condensed .story-details {
+  margin: 0;
+}

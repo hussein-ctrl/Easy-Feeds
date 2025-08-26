@@ -1,0 +1,26 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #333333;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+body h1 {
+  font-size: 35px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+body h3 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+body input {
+  display: block;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 1px;
+  margin: 5px;
+}

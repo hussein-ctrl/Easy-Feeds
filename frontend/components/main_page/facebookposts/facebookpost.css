@@ -1,0 +1,512 @@
+/* Add to existing CSS */
+.facebook-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+}
+
+.facebook-header {
+  margin-bottom: 20px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.profile-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #1877f2;
+}
+
+.filters-container {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  font-size: 14px;
+  color: #606770;
+  margin-bottom: 5px;
+}
+
+.filter-group input {
+  padding: 8px 12px;
+  border: 1px solid #dddfe2;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.view-posts-button, .reset-filters, .load-more-button {
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.view-posts-button:hover, .load-more-button:hover {
+  background-color: #166fe5;
+}
+
+.reset-filters {
+  background-color: #e4e6eb;
+  color: #050505;
+}
+
+.reset-filters:hover {
+  background-color: #d8dadf;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  color: #1877f2;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-weight: 600;
+}
+
+.facebook-posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.post-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 12px 16px;
+  border: 1px solid #dddfe2;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.post-header-link {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #050505;
+}
+
+.post-time {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  color: #65676b;
+  gap: 4px;
+}
+
+.dot-separator {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.privacy-icon {
+  font-size: 12px;
+}
+
+.options-button {
+  background: none;
+  border: none;
+  color: #606770;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.options-button:hover {
+  background-color: #f0f2f5;
+}
+
+.post-text {
+  font-size: 15px;
+  line-height: 1.38;
+  color: #050505;
+  word-break: break-word;
+  margin-bottom: 12px;
+}
+
+.post-media {
+  margin-bottom: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.media-content {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  display: block;
+}
+
+.engagement-stats {
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  color: #65676b;
+  font-size: 14px;
+  border-bottom: 1px solid #e4e6eb;
+}
+
+.reaction-summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.reaction-icons {
+  display: flex;
+  position: relative;
+  height: 18px;
+}
+
+.reaction-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1877f2;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  font-size: 10px;
+  border: 2px solid white;
+}
+
+.reaction-icon:nth-child(2) {
+  background: #f02849;
+  margin-left: -4px;
+  z-index: 1;
+}
+
+.comments-shares {
+  display: flex;
+  gap: 12px;
+}
+
+.comments-shares span {
+  cursor: pointer;
+}
+
+.comments-shares span:hover {
+  text-decoration: underline;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 4px 0;
+  color: #65676b;
+  font-size: 14px;
+  font-weight: 600;
+  height: 36px;
+  border-top: 1px solid #e4e6eb;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  background: none;
+  flex: 1;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  color: #65676b;
+  transition: background-color 0.2s;
+}
+
+.action-button:hover {
+  background-color: #f0f2f5;
+}
+
+.action-icon {
+  margin-right: 6px;
+  font-size: 18px;
+}
+
+.loading-posts {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #1877f2;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.load-more-button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.end-message {
+  text-align: center;
+  padding: 20px;
+  color: #65676b;
+}
+
+.empty-posts-state {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.empty-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.error {
+  color: #f02849;
+  padding: 20px;
+  text-align: center;
+  font-weight: 600;
+  background-color: white;
+  border-radius: 8px;
+  margin: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.post-carousel {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+}
+
+.post-carousel .media-content {
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Video Player Styles */
+.video-player-container {
+  position: relative;
+  margin: 10px 0;
+}
+
+.video-thumbnail {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.video-thumbnail.playing {
+  max-height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.play-button-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-icon {
+  width: 60px;
+  height: 60px;
+  background: #4267B2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  padding-left: 5px;
+}
+
+.video-player {
+  width: 100%;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.video-player video {
+  width: 100%;
+  display: block;
+  max-height: 500px;
+}
+
+/* Video Modal */
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+}
+
+.modal-content video {
+  width: 100%;
+  max-height: 80vh;
+}
+
+.close-modal {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.post-video-link {
+  display: block;
+  margin-top: 8px;
+  color: #1877f2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.post-video-link:hover {
+  text-decoration: underline;
+}
+
+/* Optional: Hide scrollbar for carousel on Webkit browsers */
+.post-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.post-carousel {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+  }
+  
+  .video-player {
+    max-height: 300px;
+  }
+}

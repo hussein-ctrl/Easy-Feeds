@@ -1,0 +1,11 @@
+<script type="text/javascript">
+  <% if logged_in? %>
+    window.currentUser = <%= render(
+      "api/users/user.json.jbuilder",
+      user: current_user
+    ).html_safe %>
+  <% end %>
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div id="root"></div>

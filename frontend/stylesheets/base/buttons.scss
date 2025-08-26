@@ -1,0 +1,50 @@
+body button {
+  background-color: white;
+  padding: 4px 8px;
+  margin: 10px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  align-self: center;
+  vertical-align: middle;
+  text-align: center;
+  width: fit-content;
+  box-sizing: border-box;
+}
+
+.green-button {
+  margin-left: 0;
+  font-size: 14px;
+  background: $green;
+  font-weight: 400;
+  color: white;
+  padding: 15px 40px;
+}
+
+.green-button:hover {
+  background: $darker-green;
+}
+
+.discover-button {
+  background: white;
+  padding: 4px 0;
+  font-size: 12px;
+  font-weight: 700;
+  width: 90px;
+  box-sizing: border-box;
+}
+
+.follow-button {
+  border: 1px solid $green;
+  color: $green;
+}
+
+.follow-button:hover {
+  color: $darker-green;
+  border: 1px solid $darker-green;
+}
+
+.following-button {
+  border: 1px solid grey;
+  color: grey;
+  cursor: default;
+}

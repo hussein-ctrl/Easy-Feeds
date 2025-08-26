@@ -1,0 +1,7 @@
+body {
+  padding-top: 140px; /* For logged out state */
+}
+
+.logged-in body {
+  padding-top: 80px; /* For logged in state */
+}
